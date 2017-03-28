@@ -1,4 +1,3 @@
 src:
-  class: File
-  path: rfi_cwl.py
-
+    class: File
+    path: /home/monika/Transcend/data/data_bf/160620_164656.fil

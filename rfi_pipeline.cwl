@@ -3,8 +3,8 @@ class: CommandLineTool
 label: Example trivial wrapper for python compiler
 hints:
   DockerRequirement:
-    dockerPull: pulsar_docker
-baseCommand: python
+    dockerPull: rfipip
+baseCommand: [/usr/bin/python, /home/rfi_cwl.py, --path]
 inputs:
   src:
     type: File
