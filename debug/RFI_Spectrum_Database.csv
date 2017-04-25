@@ -1,0 +1,112 @@
+,,Radio Telescope Receiver Bands,,,,,ICASA bands,,,Long Description ,          Short Descr,,,,Specific Transmittors,,,Notes
+HERA,MK-UHF,MK-L,MK-S,MK-X,C-BASS,N/A,Freq Start [MHz],Freq End [MHz],,,,,Type,Lat,Long,Karoo,C Town,
+,,,,,,X,47,87.5,BC Fixed \ Mobile (VHF),,Fixed,,F,,,,,
+X,,,,,,,70,250,HERA receiver(TBC),,HERA,,,,,,,
+X,,,,,,,87.5,108,Broadcasting (FM radio) band,,B Cast,,F,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,94.5,,,SABC radio - KFM,,KFM,F,,,X,,
+X,,,,,,,104,107,,SABC radio - SAFM,SAFM,,F,,,X,,
+X,,,,,,,100,104,,SABC radio - RSG,RSG,,F,,,X,,
+X,,,,,,,108,137,Aeronautical VHF band,,AN VHF,,A,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,118.1,,,Cape Town Tower,,CTI TWR,A,,,,X,
+X,,,,,,,118.6,,,Kimberley Tower,,KIM TWR,A,,,X,,
+X,,,,,,,119.4,,,Bloemfontein (and Kimberley) APP,,BFN APP,A,,,X,,
+X,,,,,,,120.03,,,Johannesburg Centrel Area (ACC),,JHB ACC,A,,,X,,
+X,,,,,,,120.545,,,Fire Fighting Services ,,FIRE FIGHT,A,,,,X,Carel - 18 Jan 2016
+X,,,,,,,121.5,,,International Mayday,,Mayday,A,,,X,,
+X,,,,,,,123.45,,,General Chat frequency,,Chat,A,,,X,X,
+X,,,,,,,124.8,,,Below 1500ft outside controlled airspace,,General,A,,,X,X,
+X,,,,,,,125.1,,,Cape Town West Area (ACC),,CTI West ACC,A,,,,X,
+X,,,,,,,125.6,,,Ysterplaat Tower,,YTP TWR,A,,,,X,
+X,,,,,,,127,,,Cape Town ATIS,,CTI ATIS,A,,,,X,
+X,,,,,,,131.125,,,Cape Town Information,,CTI Info,A,,,,X,
+X,,,,,,,137,174,Satelite and Mobile/Fixed,,Sat and Mobile,,A,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,145,,,Amateur SAT measured at Alkantpan,,A Pan Sat,F,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,151,,,Fix Mobile (Goverment load shedding),,Mobile,M,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,157,,,Satelite Mobile,,Sat Mobile,M,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,156.8,,,Marine VHF -Ch16 International Distress and Calling,,VHF Ch16,M,,,,X,
+X,,,,,,,161.85,,,Marine VHF - Cape Town radio (Duplex),,CT Radio,M,,,,X,
+X,,,,,,,162,,,Alkantpan two way radio,,A Pan radio,M,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,174,300,Broadcasting and Mobile (VHF),,BC /Mobile (VHF),,F,,,,,
+X,,,,,,,191,,,SABV TV Prieska,,TV Prieska,F,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,223,,,SABC TV Upington,,TV Uping,F,,,X,,2 Feb 2015 - CSIR
+X,,,,,,,300,470,Broadcast Fixed / Moble / Satelite (UHF),,BC / Mobile / Sat (UHF),,F,,,,,
+,,,,,,X,403,,,Alkantpan Met system (Low band),,A Pan Low,A,,,X,,2 Feb 2015 - CSIR
+,,,,,,X,416,,,Fixed / Mobile Public Trunking BTx,,Mobile BTx,M,,,X,,2 Feb 2015 - CSIR
+,,,,,,X,453,,,RTK GPS Base Station (Alkantpan),,A Pan RTK,F,,,X,,2 Feb 2015 - CSIR
+,,,,,,X,463,,,Cape Town - Non Directional Beacon (NDB),,CT NDB,F,,,,X,
+,,,,,,X,470,,,Fixed / Mobile (Trunking Mines and Railways),,Mobile,M,,,X,,
+,,,,,,X,470,876,Broadcasting band (TV UHF),,B Cast,,F,,,X,,
+,,,,,,X,480,,,Data links (Alkantpan),,A Pan Data,F,,,X,,2 Feb 2015 - CSIR
+,,,,,,X,482,,,DTT Priska,,DDT Priska,F,,,X,,
+,,,,,,X,570,,,DTT Upington,,DTT Uping,F,,,X,,10 Dec - T Abbot with MK-UHF
+,X,,,,,,580,1015,MeerKAT UHF band Receiver,,MK UHF,,,,,,,
+,X,,,,,,594,,,DTT Kimberley,,DTT Kim,F,,,X,,10 Dec - T Abbot with MK-UHF
+,X,,,,,,621,,,SABC TV Carnarvon,,TV Carnar,F,,,X,,2 Feb 2015 - CSIR
+,X,,,,,,623.25,,,Analogue TV Carnarvon ,,TV Carnar,F,,,X,,10 Dec - T Abbot with MK-UHF
+,X,,,,,,650,,,DTT Victoria West,,DTT VicWest,F,,,X,,
+,X,,,,,,634,,,DTT Beauford West 634,,DTT B West,F,,,X,,
+,X,,,,,,666,,,DTT Beauford West 666,,DTT B West,F,,,X,,
+,X,,,,,,746,,,DTT Douglas,,DTT Douglas,F,,,X,,10 Dec - T Abbot with MK-UHF
+,X,X,,,,,900,1670,MeerKAT L-band Receiver,,MK L-Band,,,,,,,
+,X,X,,,,,876,967,GSM 900 Mobile band,,GSM900,,F,,,X,,
+,X,X,,,,,942.4,,,GSM Vodacom vanWyksVlei,,GSM vWV,F,,,X,,MESA
+,X,X,,,,,943.6,,,GSM Vodacom Carnarvon and Williston,,GSM Carnar/Will,F,,,X,,MESA
+,X,X,,,,,967,1164,Aeronautical Navigation bands,,AN Nav,,A,,,X,,
+,,X,,,,,1030,,,SRR,,SSR,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1041,,,????,,TBD,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1052,,,Nelspruit ILS,,Nel ILS,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1086,,,????,,TBD,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1090,,,ADSB,,ADSB,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1100,,,Port Elizabeth / Mafikeng,,PE / Mafk,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1103,,,Kimberley,,Kim,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1107,,,Sishen,,Sishen,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1112,,,Bloemfontein,,Bloem,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1113,,,????,,TBD,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1123,,,ORTIA,,ORTIA,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1128,,,CTIA,,CTIA,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1135,,,Welkom,,Welkom,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1138,,,Aggeneis,,Agge,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1141,,,Langebaan,,Lange,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1147,,,Robben Island,,Robben,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1150,,,Pietermaritzburg,,PMZ,A,,,X,,Oct 2015 Scolar and Jonas
+,,X,,,,,1088,,MeerKAT UHF-band digitiser sample clock,,,MK DIG U,F,,,X,X,
+,,X,,,,,1164,1710,Satelite (GPS etc),,Sat (GPS etc),,A,,,X,,
+,,X,,,,,1176.45,,,GPS L5,,GPSL5,S,,,X,,RTS
+,,X,,,,,1207.14,,,Galileo,,Galileo,S,,,X,,RTS
+,,X,,,,,1227.6,,,GPS L2,,GPSL2,S,,,X,,RTS
+,,X,,,,,1467,1492,,WorldSpace Satelite,Worldspace,,S,,,X,,RTS
+,,,,,,,594,,,WorldSpace(Middle),,WS(Middle),,,,,,
+,,X,,,,,1475,,,Afristar,,Afristar,S,,,X,,RTS
+,,X,,,,,1526,1554,,Inmarsat,Inmar,,S,,,X,,RTS
+,,,,,,,1540,,,Imarsat (Middle),Imarsat,,,,,,,
+,,X,,,,,1575.42,,,GPS L1,,GPSL1,S,,,X,,RTS
+,,X,,,,,1600,,,Alkantpan Met System,,A Pan Met,A,,,X,,2 Feb 2015 - CSIR
+,,X,,,,,1618,1626,,IRIDIUM Sat ,IRIDIUM,,S,,,X,,2 Feb 2015 - CSIR
+,,X,,,,,1662,,,IRIDIUM(Middle),,IRD(Middle),,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,X,1712,,MeerKAT L-band digitiser sample clock,,,MK DIG-L,F,,,X,X,Revereb Chamber tests
+,,,X,,,,1750,3500,MeerKAT S-Band receiver,,MK S-Band,,,,,,,
+,,,X,,,,1710,1875,GSM 1800 Mobile band,,GSM 1800,,M,,,X,,
+,,,X,,,,1826,,,GSM 1800 Mobile Alkantpan,,AGSM A Pan,M,,,X,,2 Feb 2015 - CSIR
+,,,X,,,,1875,1920,Fixed DECT (Extended) band,,DECT,,F,,,X,,
+,,,X,,,,1889,,,DECT skurwekloof,,DECT S Kloof,F,,,X,,Jan 2015 - MESA
+,,,X,,,,1920,2100,GSM 3G band,,GSM 3G,,M,,,X,,
+,,,X,,,,2100,2300,General (UHF),,General (UHF),,,,,,,
+,,,X,,,,2300,2600,ISM band,,ISM,,F,,,X,,
+,,,X,,,,2400,,,WiFi Alkantpan,,A Pan WiFi,F,,,X,,2 Feb 2015 - CSIR
+,,,,,,,2600,5180,Various,,Various,,,,,,,
+,,,X,,,,3500,,MeerKAT S-Band digizer sample clock,,,MK DIG S,F,,,X,,
+,,,,,X,,4500,5500,C-Bass Receiver,,C-Bass,,,,,,,
+,,,,,X,,5180,5320,ISM Band,9,ISM,,F,,,X,,
+,,,,,X,,5200,,,Wi Fi (Alkantpan),,A Pan WiFi,F,,,X,,2 Feb 2015 - CSIR
+,,,,,,X,5500,5700,ISM Band,,ISM,,F,,,,,
+,,,,X,,,8000,14500,MeerKAT X-Band Receiver,,MK X-Band,,,,,,,
+,,,,x,,,9340,10060,X-Band Radars,,,,,,,,,
+,,,,X,,,9340,,,Aircraft weather radar (TBC),,AC radar,A,,,X,,2 Feb 2015 - CSIR
+,,,,X,,,10052,,,Alkantband Tracking Radar (CW),,A Pan CW,F,,,X,,2 Feb 2015 - CSIR
+,,,,X,,,10052,,,Alkantpan Velocity Measurement radar,,A Pan VMC,F,,,X,,2 Feb 2015 - CSIR
+,,,,,,,,,,,,,,,,,,Added for RFI display
+,,,,,,,,,,,,,,,,,,Added for RFI display
+,,,,,,,,,,,,,,,,,,Added for RFI display
