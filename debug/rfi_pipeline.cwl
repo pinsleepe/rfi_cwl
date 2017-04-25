@@ -14,5 +14,5 @@ outputs:
   classfile:
     type: File
     outputBinding:
-      glob: "*.h5"
+      glob: "*.csv"
 
