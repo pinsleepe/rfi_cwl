@@ -47,7 +47,36 @@ bands = rfiDb.dictionary.keys()
 # this need some logic dependent on file size
 # TODO
 vec_length = 100
-val = fil_rfiObs.rfi_median(vec_length)
+
+
+# val = fil_rfiObs.rfi_median(vec_length)
+# TODO very messy
+def rfi_median(vec_length):
+    """
+    Run through entire file and give median value for threshold
+    :param vec_length: int, how many block there is in a file,
+                        need some logic...
+    :return: 
+    """
+    tobs = self.file.header.tobs
+    start_vector = np.linspace(0,
+                               tobs,
+                               num=vec_length,
+                               endpoint=False,
+                               retstep=True)
+
+    duration = start_vector[1]
+    # first find median for mask value
+    obs_val = []
+    for sv in range(vec_length):
+        start_time = start_vector[0][sv]
+        block, _ = fil_rfiObs.read_time_freq(start_time, duration)
+        val = fil_rfiObs.rfi_threshold(block)
+        obs_val.append(val)
+
+    return median(obs_val)
+
+val = rfi_median(vec_length)
 
 training_set = pd.DataFrame(columns=('event',
                                      'c_freq',
