@@ -9,6 +9,9 @@ import argparse
 from statistics import median
 import timeit
 import pandas as pd
+import datetime
+from matplotlib.backends.backend_pdf import PdfPages
+import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser(description='Find known RFI events in filterbank file.',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -44,23 +47,8 @@ bands = rfiDb.dictionary.keys()
 # this need some logic dependent on file size
 # TODO
 vec_length = 100
-start_vector = np.linspace(0,
-                           tobs,
-                           num=vec_length,
-                           endpoint=False,
-                           retstep=True)
+val = fil_rfiObs.rfi_median(vec_length)
 
-duration = start_vector[1]
-# first find median for mask value
-obs_val = []
-for sv in range(vec_length):
-    start_time = start_vector[0][sv]
-    block, _ = fil_rfiObs.read_time_freq(start_time,
-                                         duration)
-    val = filters.threshold_yen(block)
-    obs_val.append(val)
-
-val = median(obs_val)
 training_set = pd.DataFrame(columns=('event',
                                      'c_freq',
                                      'bw',
@@ -70,6 +58,7 @@ training_set = pd.DataFrame(columns=('event',
                                      'description',
                                      'band'))
 temp_set = training_set
+corrupted_samples = 0
 for sv in range(vec_length):
     start_time = start_vector[0][sv]
     block, num_sam = fil_rfiObs.read_time_freq(start_time,
@@ -83,8 +72,9 @@ for sv in range(vec_length):
     close_img = ndimage.binary_closing(open_img,
                                        structure=cl_struck)
     close_img_inv = np.invert(close_img)
+    corrupt_block = np.count_nonzero(close_img_inv == 1)
+    corrupted_samples += corrupt_block
     labeled_array, num_features = measurements.label(close_img_inv)
-    start_sample = long(start_time / header.tsamp)
     feature_range = np.linspace(1, num_features, num=num_features)
     tf_extent = np.empty([num_features, 5],
                          dtype='int')
@@ -101,9 +91,6 @@ for sv in range(vec_length):
                 y[0],
                 y.max() - y[0]]
         tf_extent[int(ev - 1), :] = tf_e
-    norms = np.apply_along_axis(np.linalg.norm, 0, tf_extent[:, 4])
-    time_occ = tf_extent[:, 4] / norms
-    freq_occ = tf_extent[:, 2]
 
     pd_idx = 0
     t_df = fil_rfiObs.time[1] - fil_rfiObs.time[0]
@@ -177,7 +164,71 @@ for sv in range(vec_length):
                     pd_idx += 1
         training_set.append(temp_set)
 
+# write CSV
 training_set.to_csv('training_set.csv')
+
+
+# sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended
+# write report
+def percentage(part, whole):
+    return 100 * float(part)/float(whole)
+
+file_sam = vec_length * num_sam * nchans
+rfi_sam = percentage(corrupted_samples, file_sam)
+
+# Create the PdfPages object to which we will save the pages:
+# The with statement makes sure that the PdfPages object is closed properly at
+# the end of the block, even if an Exception occurs.
+with PdfPages('rfi_report.pdf') as pdf:
+    plt.rc('text', usetex=False)
+    plt.figure(figsize=(5, 5))
+    labels = 'Good', 'RFI'
+    rfi_perc = rfi_sam * 100
+    good_perc = 100 - rfi_perc
+    sizes = [good_perc, rfi_perc]
+    explode = (0, 0.1)
+
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes,
+            labels=labels,
+            autopct='%1.1f%%',
+            shadow=True,
+            startangle=90)
+    ax1.axis('equal')
+    plt.title('Cleanliness of the observation')
+    pdf.savefig()  # saves the current figure into a pdf page
+    plt.close()
+
+    plt.rc('text', usetex=False)
+    plt.figure(figsize=(5, 5))
+    data.groupby('culprit')['event'].nunique().plot.pie(autopct='%1.1f%%',
+                                                        labels=['unknown',
+                                                                'known'])
+    plt.ylabel('')
+    plt.title('Culprit classyfication')
+    pdf.savefig()
+    plt.close()
+
+    plt.rc('text', usetex=False)
+    fig = plt.figure(figsize=(5, 5))
+    data.loc[lambda df: df.culprit > 0, :].groupby('description')['event'].nunique().plot.pie(autopct='%1.1f%%')
+    plt.ylabel('')
+    plt.title('Known culprit occurences')
+    pdf.savefig(fig)  # or you can pass a Figure object to pdf.savefig
+    plt.close()
+
+    plt.rc('text', usetex=False)
+    fig = plt.figure(figsize=(5, 5))
+    data.loc[lambda df: df.culprit > 0, :].groupby('description')['duration'].sum().plot.pie(autopct='%1.1f%%')
+    plt.ylabel('')
+    plt.title('Known culprit time occupancy')
+    pdf.savefig(fig)  # or you can pass a Figure object to pdf.savefig
+    plt.close()
+
+    # We can also set the file's metadata via the PdfPages object:
+    d = pdf.infodict()
+    d['Title'] = 'RFI Report'
+    d['ModDate'] = datetime.datetime.today()
 
 # toc = timeit.default_timer()
 # print('elapsed time in minutes %f' % (toc - tic)/60.0)

@@ -15,4 +15,8 @@ outputs:
     type: File
     outputBinding:
       glob: "*.csv"
+  classfile1:
+    type: File
+    outputBinding:
+      glob: "*.pdf"
 
