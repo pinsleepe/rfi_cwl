@@ -58,7 +58,7 @@ def rfi_median(vec_length):
                         need some logic...
     :return: 
     """
-    tobs = self.file.header.tobs
+    tobs = fil_rfiObs.file.header.tobs
     start_vector = np.linspace(0,
                                tobs,
                                num=vec_length,
