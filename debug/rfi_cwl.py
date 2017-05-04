@@ -50,6 +50,15 @@ vec_length = 100
 
 
 # val = fil_rfiObs.rfi_median(vec_length)
+def rfi_threshold(data_array):
+    """
+    Calculate threshold based on Yen algorithm
+    :param data_array: numpy array
+    :return: 
+    """
+    return filters.threshold_yen(data_array)
+
+
 # TODO very messy
 def rfi_median(vec_length):
     """
@@ -71,7 +80,7 @@ def rfi_median(vec_length):
     for sv in range(vec_length):
         start_time = start_vector[0][sv]
         block, _ = fil_rfiObs.read_time_freq(start_time, duration)
-        val = fil_rfiObs.rfi_threshold(block)
+        val = rfi_threshold(block)
         obs_val.append(val)
 
     return median(obs_val)
