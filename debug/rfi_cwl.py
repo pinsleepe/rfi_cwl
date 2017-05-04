@@ -1,4 +1,6 @@
 #!/usr/local/bin/python
+import matplotlib
+matplotlib.use('Agg')
 from rfipip import rfiObs, rfiDatabase
 import numpy as np
 from scipy import ndimage
