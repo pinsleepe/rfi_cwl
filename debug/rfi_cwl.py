@@ -95,6 +95,12 @@ training_set = pd.DataFrame(columns=('event',
                                      'culprit',
                                      'description',
                                      'band'))
+start_vector = np.linspace(0,
+                           tobs,
+                           num=vec_length,
+                           endpoint=False,
+                           retstep=True)
+duration = start_vector[1]
 temp_set = training_set
 corrupted_samples = 0
 for sv in range(vec_length):
