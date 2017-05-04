@@ -245,7 +245,7 @@ with PdfPages('rfi_report.pdf') as pdf:
 
     plt.rc('text', usetex=False)
     plt.figure(figsize=(5, 5))
-    data.groupby('culprit')['event'].nunique().plot.pie(autopct='%1.1f%%',
+    training_set.groupby('culprit')['event'].nunique().plot.pie(autopct='%1.1f%%',
                                                         labels=['unknown',
                                                                 'known'])
     plt.ylabel('')
@@ -255,7 +255,7 @@ with PdfPages('rfi_report.pdf') as pdf:
 
     plt.rc('text', usetex=False)
     fig = plt.figure(figsize=(5, 5))
-    data.loc[lambda df: df.culprit > 0, :].groupby('description')['event'].nunique().plot.pie(autopct='%1.1f%%')
+    training_set.loc[lambda df: df.culprit > 0, :].groupby('description')['event'].nunique().plot.pie(autopct='%1.1f%%')
     plt.ylabel('')
     plt.title('Known culprit occurences')
     pdf.savefig(fig)  # or you can pass a Figure object to pdf.savefig
@@ -263,7 +263,7 @@ with PdfPages('rfi_report.pdf') as pdf:
 
     plt.rc('text', usetex=False)
     fig = plt.figure(figsize=(5, 5))
-    data.loc[lambda df: df.culprit > 0, :].groupby('description')['duration'].sum().plot.pie(autopct='%1.1f%%')
+    training_set.loc[lambda df: df.culprit > 0, :].groupby('description')['duration'].sum().plot.pie(autopct='%1.1f%%')
     plt.ylabel('')
     plt.title('Known culprit time occupancy')
     pdf.savefig(fig)  # or you can pass a Figure object to pdf.savefig
