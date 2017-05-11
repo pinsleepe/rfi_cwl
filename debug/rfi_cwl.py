@@ -8,7 +8,7 @@ import pandas as pd
 import datetime
 from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
-
+import argparse
 
 parser = argparse.ArgumentParser(description='Find known RFI events in filterbank file.',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
