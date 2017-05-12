@@ -1,6 +1,6 @@
 #!/usr/local/bin/python
-# import matplotlib
-# matplotlib.use('Agg')
+import matplotlib
+matplotlib.use('Agg')
 from rfipip import rfiObs, rfiUtils, rfiReport
 import timeit
 import numpy as np
