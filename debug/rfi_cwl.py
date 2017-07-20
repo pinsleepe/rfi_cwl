@@ -45,7 +45,9 @@ data = fil_rfiObs.write2csv(return_h5=True)
 
 # sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended
 # write report
-report_name = 'rfi_report.pdf'
+report_name = fil_rfiObs.file.header.source_name + '_' + \
+              str(fil_rfiObs.file.header.src_dej) + '_' + \
+              str(fil_rfiObs.file.header.src_raj) + '.pdf'
 rfi_pdf = rfiReport.RfiReport(report_name)
 rfi_sam = fil_rfiObs.percentage_rfi(vec_length)
 rfi_pdf.write_report(data, rfi_sam)
